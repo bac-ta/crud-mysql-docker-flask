@@ -1,5 +1,19 @@
 version: "3.3"
 services:
+  # Flask
+  flask-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    links:
+      # network connection with these services
+      - mysql-database
+    depends_on:
+      - mysql-database
+    ports:
+      - "5000:5000"
+
   # Database Service (Mysql)
   mysql-database:
     image: mariadb
@@ -14,11 +28,6 @@ services:
     volumes:
       - database-data:/var/lib/mysql
     command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
-    networks:
-      flask-app-network:
 
 volumes:
   database-data:
-
-networks:
-  flask-app-network:
