@@ -1,2 +1,10 @@
-Flask
-sqlalchemy
+Flask==1.0.2
+sqlalchemy==1.2.7
+Flask-Cors==3.0.4
+flask-marshmallow==0.13.0
+Flask-SQLAlchemy==2.4.4
+marshmallow==3.8.0
+marshmallow-sqlalchemy==0.23.1
+SQLAlchemy==1.2.7
+Flask-Migrate==3.0.1
+sqlalchemy-migrate==0.13.0
